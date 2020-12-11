@@ -1,0 +1,192 @@
+@import "typography.css";
+
+html {
+    background-color: black;
+    background-image: url("../../darker_cyberspace_wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+
+body {
+    color: #eeeeee;
+    font-family: "Ubuntu Mono";
+}
+
+button {
+    font-family: "Ubuntu Mono";
+}
+
+.content-header {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.primary-header {
+    margin-top: 30px;
+    padding: 20px;
+    padding-left: 100px;
+    position: relative;
+    left: -50px;
+    width: 370px;
+    background-color: rgba(42,42,42,0.65);
+    line-height: 1.5;
+    border-radius: 150px;
+    font-weight: 500;
+}
+
+.nav-menu {
+    position: fixed;
+    right: -430px;
+    top: 30px;
+    width: 500px;
+    height: 64px;
+    background-color: rgba(42,42,42,0.65);
+    border-radius: 50px;
+    transition: 0.5s;
+    display: flex;
+}
+
+.nav-menu.active {
+    right: -190px;
+}
+
+#menu-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #999999;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    margin: 7px;
+    border-radius: 100px;
+    fill: #999999;
+    transition: 0.5s;
+}
+
+#menu-btn svg path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: 0.5s;
+}
+
+#menu-btn.active { border: 3px solid red; }
+
+#menu-btn svg #menu-path-1.active, #menu-btn svg #menu-path-2.active {
+    d: path("M24,17 L83,76 76,83 17,24");
+    fill: red;
+}
+
+#menu-btn svg #menu-path-3.active {
+    fill: red;
+    d: path("M17,76 L76,17 83,24 24,83");
+}
+
+.nav-menu-list {
+    list-style: none;
+    display: flex;
+    margin: auto 0;
+    padding-inline-start: 20px;
+}
+
+.nav-menu-list li {
+    /*display: inline;*/
+    margin: 0 5px;
+}
+
+.nav-menu-link {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 5px;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.nav-menu-link:hover {
+    color: #d25817;
+    text-decoration: underline;
+}
+
+.main-content {
+    width: 60%;
+    margin: 50px auto;
+    background-color: rgba(42,42,42,0.65);
+    border-radius: 15px;
+    padding: 30px 6%;
+}
+
+.main-content p {
+    text-align: justify;
+    margin: 20px 4% 20px;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.main-content p .content-list {
+    padding-left: 75px;
+}
+
+.main-content p a {
+    text-decoration: underline;
+    color: #eeeeee;
+}
+
+.main-content p a:hover {
+    text-decoration: underline;
+    color: #d25817;
+}
+
+.card-btn {
+    margin: 15px;
+}
+
+.card {
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.card-background {
+    background-color: rgba(42,42,42,0.65);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+}
+
+.card:hover .card-background{
+    filter: brightness(30%);
+}
+
+.card-text {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 1.5rem;
+    transition: 0.2s;
+}
+
+.card-btn:hover > .card > .card-text {
+    bottom: 44%;
+    left: 28%;
+    color: #eeeeee;
+    filter: brightness(100%);
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
