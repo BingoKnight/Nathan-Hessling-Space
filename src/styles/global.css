@@ -194,3 +194,74 @@ button {
     justify-content: center;
     padding: 0 100px;
 }
+
+.contact-form {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: auto auto;
+}
+
+input[type="text"]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999999;
+    color: #999999;
+    outline: none;
+    font-size: 1.1rem;
+    font-family: "Ubuntu Mono";
+    margin-bottom: 1px;
+    /*width: 100%;*/
+}
+
+input[type="text"]:focus{
+    border-bottom: 2px solid #d25817;
+    margin-bottom: 0px;
+}
+
+textarea {
+    background-color: transparent;
+    border: 1px solid #999999;
+    color: #999999;
+    outline: none;
+    font-size: 1.1rem;
+    font-family: "Ubuntu Mono";
+    margin: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 1px !important;
+    resize: none;
+    /*width: 100%;*/
+    height: 300px;
+}
+
+textarea:focus {
+    border: 2px solid #d25817;
+    margin: 0px !important;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    margin: 30px 20px;
+}
+
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+.col {
+    flex: 1 1 auto;
+    /*margin: 0 15px;*/
+    display: inline-flex;
+}
+
+.col * {
+    flex: 0 0 100%;
+}
+
+#contact-form {
+    width: 60%;
+    margin: auto;
+}
