@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardContainer from "../components/CardContainer";
 
 export default () => {
-
     const techCardList = [
         {
             title: 'React',
