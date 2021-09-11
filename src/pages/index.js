@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardContainer from "../components/CardContainer";
@@ -47,32 +47,59 @@ export default () => {
         }
     ]
 
+    const fullQuote = "\"Don't make your problems your customer's problems\" \"Don't make your problems your customer's problems\" \"Don't make your problems your customer's problems\""
+    const [printedQuote, setPrintedQuote] = useState("")
+    const [typeWriterCounter, setTypeWriterCounter] = useState(0)
+
+    useEffect(() => {
+        function writeQuote() {
+            if(printedQuote.length < fullQuote.length) {
+                setPrintedQuote(printedQuote + fullQuote[printedQuote.length])
+            }
+        }
+
+        let typeWriterTimer = setTimeout(() => writeQuote(), 75)
+        return () => {
+            clearTimeout(typeWriterTimer)
+        }
+        // }
+    }, [printedQuote])
+
     return (
         <Layout>
-            <h2 className={'content-header'}>Home</h2>
-            <p>
-                Welcome to my space on the internet, if you haven't derived from the name of the website
-                or the title to the top left, my name is Nathan Hessling. I am a Software Engineer that primarily focuses
-                in web development but I have dabbled in game development, AI, and some systems development. If you're
-                interested in learning a little more about me feel free to head over to the About page.
-            </p>
-            <p>
-                This website is just my sandbox on the internet to link publicize my projects or play with some new
-                web technology. For example, the motivation to create this site came from learning about GatsbyJS which
-                turned into the desire to create something which includes it. This website is completely from scratch in
-                respect to website builders (eg. Wix, Wordpress, GoDaddy, etc) using the technologies below:
+            <div id={'hero-banner'}>
+                <div class={'header-body'}>
+                    <div>
+                        <span id={'typewriter-text'} className={printedQuote.length < fullQuote.length ? 'active' : ''}>{printedQuote}</span>
+                    </div>
+                </div>
+            </div>
+            <div className={'main-content'}>
+                <h2 className={'content-header'}>Recent Articles</h2>
+                <p>
+                    Welcome to my space on the internet, my name is Nathan and I am a Software Engineer that primarily focuses
+                    in web development but I have dabbled in game development, AI, and some systems development.
+                    I have a Bachelor's in Software Engineering from the University of Michigan Dearborn. If you're
+                    interested in learning a little more about me feel free to head over to the About page.
+                </p>
+                <p>
+                    This website is just my sandbox on the internet to link publicize my projects or play with some new
+                    web technology. For example, the motivation to create this site came from learning about GatsbyJS which
+                    turned into the desire to create something which includes it. This website is completely from scratch in
+                    respect to website builders (eg. Wix, Wordpress, GoDaddy, etc) using the technologies below:
 
 
-            </p>
-            <CardContainer>
-                {
-                    techCardList.map(card =>
-                        <Card backgroundImage={card.image} url={card.url}>
-                            {card.title}
-                        </Card>
-                    )
-                }
-            </CardContainer>
+                </p>
+                <CardContainer>
+                    {
+                        techCardList.map(card =>
+                            <Card backgroundImage={card.image} url={card.url}>
+                                {card.title}
+                            </Card>
+                        )
+                    }
+                </CardContainer>
+            </div>
         </Layout>
     )
 }

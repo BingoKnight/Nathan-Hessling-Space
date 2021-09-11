@@ -5,32 +5,34 @@ import Button from '../components/Button'
 
 const Contact = () => {
    return <Layout>
-        <h2 className={'content-header'}>Contact Form</h2>
-        <div id={'contact-form'}>
-            <div className={'row'}>
-                <div className="col">
-					<TextInput id="first-name-contact" label="First Name"/>
-				</div>
-                <div className="col">
-					<TextInput id="last-name-contact" label="Last Name"/>
-				</div>
+       <div className="main-content">
+            <h2 className={'content-header'}>Contact Form</h2>
+            <div id={'contact-form'}>
+                <div className={'row'}>
+                    <div className="col">
+		    			<TextInput id="first-name-contact" label="First Name" spellcheck={false} />
+		    		</div>
+                    <div className="col">
+		    			<TextInput id="last-name-contact" label="Last Name" spellcheck={false} />
+		    		</div>
+                </div>
+                <div className={'row'}>
+                    <div className="col form-input">
+		    			<TextInput id="subject-contact" label="Subject" />
+		    		</div>
+                </div>
+                <div className={'row'}>
+                    <div className="col">
+		    			<textarea placeholder={'Message'}/>
+		    		</div>
+                </div>
+		    	<div className={'row'}>
+		    		<div className={'col'}>
+		    			<Button label="Send" />	
+		    		</div>
+	            </div>
             </div>
-            <div className={'row'}>
-                <div className="col form-input">
-					<TextInput id="subject-contact" label="Subject" />
-				</div>
-            </div>
-            <div className={'row'}>
-                <div className="col">
-					<textarea placeholder={'Message'}/>
-				</div>
-            </div>
-			<div className={'row'}>
-				<div className={'col'}>
-					<Button label="Send" />	
-				</div>
-			</div>
-        </div>
+       </div>
     </Layout>
 }
 
