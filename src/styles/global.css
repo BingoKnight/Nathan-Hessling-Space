@@ -201,7 +201,7 @@ button {
     list-style: none;
     display: flex;
     margin: auto 0;
-    padding-inline-start: 20px;
+    padding-inline-start: 60px;
 }
 
 .nav-menu-list li {
@@ -312,8 +312,14 @@ button {
 	margin: auto;
 }
 
+#contact-form .col {
+    margin: 15px 20px;
+}
+
 .form-input {
 	position: relative;
+    display: flex;
+    height: 22px;
 }
 
 .form-input input[type="text"]{
@@ -382,7 +388,6 @@ textarea:focus {
 .col {
     flex: 1 1 auto;
     display: inline-flex;
-    margin: 15px 20px;
 }
 
 .col * {
@@ -397,8 +402,6 @@ textarea:focus {
 	background-color: transparent;
 	border: 1px solid #999999;
 	cursor: pointer;
-	height: 40px;
-	width: 125px;
 	font-size: 1.2rem;
 	color: #999999;
 	border-radius: 15px;
@@ -472,6 +475,11 @@ textarea:focus {
     padding-left: 50px;
 }
 
-#login-form {
-    flex-direction: row;
+.align-items-base {
+    align-items: baseline;
 }
+
+#login-form .col {
+    margin: 5px 10px;
+}
+

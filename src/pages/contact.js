@@ -10,10 +10,10 @@ const Contact = () => {
             <div id={'contact-form'}>
                 <div className={'row'}>
                     <div className="col">
-		    			<TextInput id="first-name-contact" label="First Name" spellcheck={false} />
+		    			<TextInput id="first-name-contact" label="First Name" disableSpellCheck={false} />
 		    		</div>
                     <div className="col">
-		    			<TextInput id="last-name-contact" label="Last Name" spellcheck={false} />
+		    			<TextInput id="last-name-contact" label="Last Name" disableSpellCheck={false} />
 		    		</div>
                 </div>
                 <div className={'row'}>

@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
-const TextInput = ({ id, label, spellcheck }) => {
+const TextInput = ({ id, label, disableSpellCheck }) => {
 	
-	const [text, setText] = useState('');
+    const [text, setText] = useState('');
 
 	return (
-		<div className="form-input">
-			<input type={'text'} id={id} onChange={e => setText(e.target.value)} spellcheck={spellcheck === false ? 'false' : ''} />
+        <div className="form-input">
+                                                                                {/* important that spellcheck is set to false in this fashion, */}
+                                                                                {/* spellcheck is on by default */}
+			<input type={'text'} id={id} onChange={e => setText(e.target.value)} spellcheck={disableSpellCheck ? 'false' : ''} />
 			<label htmlFor={id} className={text ? 'active' : null}>{label}</label>
 		</div>
 	)

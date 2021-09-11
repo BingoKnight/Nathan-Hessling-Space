@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'gatsby'
 import TextInput from '../components/TextInput'
 import Button from '../components/Button'
 
@@ -8,9 +9,12 @@ import Menu from './Menu'
 function LoginForm() {
     return (
         <div id="login-form">
-		    <TextInput id="email-login" label="Email" />
-            <TextInput id="password-loging" label="Password" />
-            <Button label="Login" />	
+            <div className="row align-items-base">
+                <div className="col"><TextInput id="email-login" label="Email" /></div>
+                <div className="col"><TextInput id="password-loging" label="Password" /></div>
+                <div className="col"><Button label="Login" width="80px" height="40px" /></div>
+                <div className="col"><Link to={'#'} className={'nav-menu-link'}>Sign up</Link></div>
+            </div>
         </div>
     )
 }
