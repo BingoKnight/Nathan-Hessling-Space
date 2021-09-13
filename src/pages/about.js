@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from "../components/Layout";
+import PageContentLayout from '../components/PageContentLayout'
 
 const About = () => {
     const desktopSpecs = [
@@ -66,7 +67,7 @@ const About = () => {
 
     return (
         <Layout>
-            <div className={'main-content'}>
+            <PageContentLayout>
                 <h2 className={'content-header'}>About Page</h2>
                 <p>
                     This about page is just going to talk about some of my interests and experiences with them.
@@ -126,7 +127,7 @@ const About = () => {
                 <p>
                     
                 </p>
-            </div>
+            </PageContentLayout>
         </Layout>
     )
 }

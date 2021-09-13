@@ -2,18 +2,20 @@ import React from 'react'
 import Layout from "../components/Layout"
 import TextInput from '../components/TextInput'
 import Button from '../components/Button'
+import PageContentLayout from '../components/PageContentLayout'
+
 
 const Contact = () => {
    return <Layout>
-       <div className="main-content">
+       <PageContentLayout>
             <h2 className={'content-header'}>Contact Form</h2>
-            <div id={'contact-form'}>
+            <div className={'form'}>
                 <div className={'row'}>
                     <div className="col">
-		    			<TextInput id="first-name-contact" label="First Name" disableSpellCheck={false} />
+		    			<TextInput id="first-name-contact" label="First Name" disableSpellCheck />
 		    		</div>
                     <div className="col">
-		    			<TextInput id="last-name-contact" label="Last Name" disableSpellCheck={false} />
+		    			<TextInput id="last-name-contact" label="Last Name" disableSpellCheck />
 		    		</div>
                 </div>
                 <div className={'row'}>
@@ -32,7 +34,7 @@ const Contact = () => {
 		    		</div>
 	            </div>
             </div>
-       </div>
+       </PageContentLayout>
     </Layout>
 }
 
