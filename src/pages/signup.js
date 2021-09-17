@@ -37,10 +37,28 @@ export default function Signup() {
     }
 
     function submitRegistration() {
-        console.log(`First name: ${firstName}`)
-        console.log(`Last name: ${lastName}`)
-        console.log(`Email: ${email1}`)
-        console.log(`Password: ${password1}`)
+        if(password1 !== password2 || email1 !== email2)
+            return
+
+        const signUpRequestBody = {
+            first_name: firstName,
+            last_name: lastName,
+            email1: email1,
+            email2: email2,
+            password1: password1,
+            password2: password2
+        }
+
+        const signUpRequestOptions = {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(signUpRequestBody)
+        }
+
+        fetch(`${process.env.GATSBY_API_BASE_URL}/api/v1/user/registration`, signUpRequestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data))
+
     }
 
     return (
